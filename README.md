@@ -1,4 +1,4 @@
-# introdulção-o-JS
+# introdução-o-JS
 
 ## Arrow Function
 ```javascript
