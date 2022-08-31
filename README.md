@@ -118,6 +118,109 @@ var partes = ['ombro', 'joelhos']
 var musica = ['cabeça', ...partes, 'e', 'pés'];
 ```
 
+## Orientação a objeto
+- Herança: 
+Baseada em protótipos(prototype)
+__proto__ aponta para o prototype
+Toda função construtora (Ex: String()) tem um prototype atrelado e sempre ao criar uma variavel com ela
+vai ter a referência __proto__ nela
+
+Para que serve o operador new?
+Ex :
+```javascript 
+const cachorro = new Animal()
+```
+é um novo objeto é criado e ele herda o prototype da função construtora Animal()
+Ex:
+```javascript
+function Pessoa(name){
+  this.name = name
+}
+const p = new Pessoa('Guilherme')
+console.log(p) // => Pessoa{name:"Guilherme"}
+```
+- Classes: simplificação da herança de protótipos
+Ex: 
+```javascript
+class Person{
+  constructor(name){
+    this.name = name;
+  }
+}
+class PessoaFísica extends Person {
+  constructor(name,cpf){
+    super(name);
+    this.cpf = cpf;
+  }
+}
+```
+
+## Design Patterns
+Padrões de projetos, definição de alto nível de como um problema pode ser solucionado
+- Formato de um pattern: 
+  - nome
+  - exemplo
+  - contexto
+  - problema
+  - solução
+- Factory: <br>
+Funções que retornam um objeto sem necessidade de chama-las com new 
+```javascript
+class Person{
+  return{
+    name: 'Sâmia',
+    lastName: 'Vasconcelos'
+  }
+}
+const p = Pessoa();
+```
+- Singleton: <br>
+Cria uma única instância de uma função construtora e retorna toda vez que for necessário utilizá-la(ex: jQuery)
+
+- Decorator: <br>
+Recebe uma outra função como parâmetro e estende o seu comportamento sem modificá-la explicitamente
+```javascript
+let loggedIn = false
+function callIfAuthenticated(fn){
+  return !!loggedIn && fn();
+}
+function sum(a,b){
+  return a + b
+}
+console.log(callIfAuthenticated(() => sum(2,3)))
+```
+
+- Observer: <br>
+A instância maném uma coleção de objetos e notifica todos eles quando ocorrem mudança no estado
+Ex:
+```javascript
+class Observable{
+  constructor(){
+    this.observables = []
+  }
+  subscribe(fn){
+    this.observables.push(fn)
+  }
+  notify(data){
+    this.observables.forEach(fn => fn(data))
+  }
+  unsubscribe(fn){
+    this.observables = this.observables.filter(obs => obs !== fn)
+  }
+}
+const o = new Observable()
+```
+- Module: <br>
+Possibilita organizar melhor o nosso codigo, sem a necessidade de expor variáveis globais<br>
+Faz exportação e importação 
+Ex:
+```javascript
+module.exports 
+require('./module.js')
+```
+
+
+
 ## Function
 ```javascript
 

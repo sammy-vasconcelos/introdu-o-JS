@@ -5,31 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="text/javascript" src="js/main.js"></script>
-    <style>
-            * {
-        padding: 2%;
-        margin: 1%;
-        box-sizing: border-box;
-        text-decoration: none;
-        font-family: sans-serif;
-        font-size: 14px;
-        }
-        div{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 30px;
-        }
-        
-    </style>
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
+    <div class="container">
+        <header class="cabecalho">
+            <div class="perfil">
+                <img src="https://avatars.githubusercontent.com/u/107193656?v=4" alt="" class="perfil-foto">
+                <div class="titulo">
+                    <h1>Sâmia Vasconcelos</h1>
+                    <h3>Estudante de Ciência da Computação</h3>
+                </div>
+            </div>
+            <div class="tema">
+                <button onclick="mudaModo()">Alterar tema</button>
+            </div>
+        </header>
+        <main class="portfolio">
+            <div class="projetos">
+                <ul>Projetos</ul>
+                <li>
+                    <p>InstaFofo</p>
+                    <p class="codepen" data-height="300" data-default-tab="html,result" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+                    <span>Veja o InstaFofo <a href="https://github.com/sammy-vasconcelos/LandingPageStyleInsta.git"> Instagram </a> </span>
+                    </p>
+                    <script async src="https://github.com/sammy-vasconcelos/LandingPageStyleInsta.git"></script>
+                </li>
+            </div>
+            <div class="conquistas">
+                <ul>Conquistas</ul>
+                <li><img src="https://media.discordapp.net/attachments/826504749561413662/876882280377897041/Aula_1_-_Media.png?width=461&height=461"></li>
+                <li><img src="https://media.discordapp.net/attachments/826504749561413662/876882993124372571/Aula_9_-_HTML_e_CSS.png?width=461&height=461"></li>
+                <li><img src="https://media.discordapp.net/attachments/826504749561413662/876883011268902962/Dia_2_-_Calculadora.png?width=425&height=425"></li>
+            </div>
+        </main>
+    </div>
+
+
+    <!-- <div>
    <button type="button" onclick="clicou()" name="botao"> Clique aqui!</button>
    <h2 id="agradecimento"></h2>
    <button type="button" onmouseover="trocar()" name="botao">Passe o mouse aqui!</button>
-    </div>
+    </div> -->
 </body>
 </html>
